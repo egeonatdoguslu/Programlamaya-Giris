@@ -1,0 +1,22 @@
+#Büyük fibonacci sayılarında programımızın afallamaması için bir yere kadar yaptığı recursive işlemleri hafızada tutturalım.
+from functools import lru_cache
+
+@lru_cache(maxsize=120)
+#Fibonacci hesabımız bu
+def Fib(n):
+    """Fibonacci serisindeki her sayı kendinden önceki iki sayının toplamıdır. Seri bir sayısından başlar."""
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return Fib(n-1)+Fib(n-2)
+#Girdileri kontrol eden bir fonksiyonda fibonacciyi çalıştıralım.
+def implement():
+    
+    try:
+        x = int(input("Bir sayı giriniz."))
+        print("Sonucunuz:", Fib(x))
+    except (RecursionError, ValueError):
+        print("Yanlış yapmış olabileceğiniz şeyler: \n1)Çok büyük bir sayı girdiniz.\n2)Sayı olmayan bir giri yaptınız.")
+implement()
