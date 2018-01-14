@@ -1,0 +1,15 @@
+"""Bir veri dosyasından ikili sayıları okuyan ve bunları diğer tabanlardaki sayılara çeviren programı yazınız."""
+import csv
+path = "C:\\Users\\Hp\\.PyCharmCE2017.3\\PycharmProjects\\Veriler.csv"
+kodlama = "utf-8"
+file = open(path, newline="", mode="r", encoding=kodlama)
+reader = csv.reader(file)
+data = [line for line in reader]
+sayi_sistemleri = ["onlu", "sekizli", "on altılı", "ikili"]
+def taban():
+    en_uzun = len(max(sayi_sistemleri, key=len))
+    print(("{:^{aralık}} " * len(sayi_sistemleri)).format(*sayi_sistemleri, aralık=en_uzun))
+    for i in data:
+        print("{0:^{1}} {0:^{1}o} {0:^{1}x} {0:^{1}b}".format(int(i[0]), en_uzun))
+
+taban()
