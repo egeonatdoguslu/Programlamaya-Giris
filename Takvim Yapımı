@@ -1,0 +1,10 @@
+"""Bir kişinin adını ilk, ortadaki , son biçiminde okuyan bir program yazın.
+ Ve isimlerden her birini ayrı bir
+satırda basın. Her birini ayrı bir satırda
+bastıktan sonra soyadını takiben, program adın baş harflerini basmalı."""
+
+import calendar
+user_input = int(input("Takvimini Görmek İstediğiniz Bir Yıl Seçin"))
+user_input2= int(input("Hangi ayın takvimini istiyorsunuz? Numarasını giriniz."))
+liste= [user_input,user_input2]
+print(calendar.month(user_input,user_input2,4,1))
